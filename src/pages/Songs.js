@@ -4,10 +4,9 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HomeSongs from "../components/HomeSongs";
 import CreateSong from "../components/CreateSong";
-import { useNavigate } from "react-router-dom";
 
 const Songs = () => {
-  const { songs, me, setSongs } = useContext(DataContext);
+  const { songs, setSongs } = useContext(DataContext);
   const [search, setSearch] = useState("");
   const [createSong, setCreateSong] = useState(false);
 
@@ -20,7 +19,6 @@ const Songs = () => {
         <CreateSong
           setCreateSong={setCreateSong}
           songs={songs}
-          me={me}
           setSongs={setSongs}
         />
       ) : (
@@ -28,7 +26,7 @@ const Songs = () => {
           className="create-song-button"
           onClick={() => setCreateSong(true)}
         >
-          Create A Song
+          Create A New Song
         </button>
       )}
 
@@ -53,6 +51,7 @@ const Songs = () => {
           )}
           search={search}
           setSongs={setSongs}
+          setCreateSong={setCreateSong}
         />
       </main>
 

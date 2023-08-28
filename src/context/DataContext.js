@@ -1,23 +1,21 @@
 import { createContext, useEffect, useState } from "react";
-import api, { wordsApi } from "../Api/api";
 
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  const me = {
-    _id: "64e45d05974b4af610a9dab3",
-    email: "seroba@gmail.com",
-  };
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    const fetchedSongs = JSON.parse(localStorage.getItem("songs"));
+    if (localStorage.getItem("songs")) {
+      const fetchedSongs = JSON.parse(localStorage.getItem("songs"));
 
-    setSongs(fetchedSongs);
+      console.log(fetchedSongs);
+      setSongs(fetchedSongs);
+    } else return setSongs([]);
   }, []);
 
   return (
-    <DataContext.Provider value={{ songs, me, setSongs }}>
+    <DataContext.Provider value={{ songs, setSongs }}>
       {children}
     </DataContext.Provider>
   );

@@ -1,6 +1,4 @@
 import React, { useRef, useState } from "react";
-import api from "../Api/api";
-import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 
 const CreateSong = ({ setCreateSong, setSongs, songs }) => {
@@ -9,6 +7,7 @@ const CreateSong = ({ setCreateSong, setSongs, songs }) => {
 
   const handleCreateSong = async () => {
     if (titleRef.current.value === "") return;
+    setLoading(true);
 
     const newSong = {
       _id: v4(),
@@ -20,6 +19,9 @@ const CreateSong = ({ setCreateSong, setSongs, songs }) => {
     setSongs((prev) => {
       return [...prev, newSong];
     });
+    setLoading(false);
+    titleRef.current.value = "";
+    setCreateSong(false);
   };
 
   return (

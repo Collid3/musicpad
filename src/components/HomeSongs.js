@@ -1,10 +1,9 @@
 import "../styles/home.css";
 import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import api from "../Api/api";
 import { MdDelete } from "react-icons/md";
 
-const HomeSongs = ({ songs, search, setSongs }) => {
+const HomeSongs = ({ songs, search, setSongs, setCreateSong }) => {
   const navigate = useNavigate("");
 
   const handleDelete = async (songId) => {
@@ -21,9 +20,11 @@ const HomeSongs = ({ songs, search, setSongs }) => {
   };
 
   useEffect(() => {
-    const fetchedSongs = JSON.parse(localStorage.getItem("songs"));
+    if (localStorage.getItem("songs")) {
+      const fetchedSongs = JSON.parse(localStorage.getItem("songs"));
 
-    setSongs(fetchedSongs);
+      setSongs(fetchedSongs);
+    } else return setSongs([]);
   }, [setSongs]);
 
   return (
@@ -49,7 +50,10 @@ const HomeSongs = ({ songs, search, setSongs }) => {
         ))
       ) : search === "" ? (
         <p>
-          No songs to display <Link>Add Song</Link>
+          No songs to display{" "}
+          <Link style={{ color: "orange" }} onClick={() => setCreateSong(true)}>
+            Add Song
+          </Link>
         </p>
       ) : (
         <p>

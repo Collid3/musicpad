@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Limbu&family=Noto+Sans+Shavian&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #0c4a60;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.App {
+  font-size: 1.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 7px;
+  padding: 0 10px;
+  background-color: #0c4a60;
+  color: #f4f3ea;
+  font-family: "Noto Sans Shavian", sans-serif;
+  position: relative;
+}
+
+h1 {
+  color: #f4f3ea;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-align: start;
+  margin-bottom: 3px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #0c4a60;
+  padding-bottom: 10px;
+  padding-top: 2px;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #0c4a60;
+  padding: 4px;
+  padding-bottom: 5px;
+}
+
+main {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    font-size: 1.45rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    font-size: 1.35rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}

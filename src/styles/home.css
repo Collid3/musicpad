@@ -1,0 +1,100 @@
+.create-song-button {
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: #f6c026;
+  color: #0c4a60;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.create-song-container .create-song-cancel-button {
+  background-color: rgb(236, 54, 54);
+  color: white;
+  border-radius: 0;
+}
+
+.create-song-button:hover {
+  color: white;
+}
+
+.search {
+  padding: 8px;
+  width: 100%;
+}
+
+.create-song-container {
+  display: flex;
+}
+
+.create-song-container input {
+  padding: 7px;
+  width: 100%;
+  text-transform: capitalize;
+  border-radius: 5px 0 0 5px;
+}
+
+.create-song-container button {
+  width: 80px;
+  cursor: pointer;
+  background-color: #f6c026;
+  border: none;
+  color: #0c4a60;
+  font-weight: bolder;
+  border-radius: 0 5px 5px 0;
+}
+
+.create-song-container button:hover {
+  background-color: #abdff1;
+  color: black;
+}
+
+.home-songs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.home-songs-container li {
+  text-align: start;
+  background-color: #196d8b;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.home-songs-container li:hover {
+  background-color: #1c8fb9;
+}
+
+.home-songs-container li h3 {
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.home-songs-container li > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-songs-container li > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.home-songs-container li > div p span {
+  color: darkorange;
+}
+
+.home-songs-container li > div svg {
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.home-songs-container li > div svg:hover {
+  color: red;
+}

@@ -1,0 +1,119 @@
+.words-container {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  margin-bottom: 7px;
+  margin-top: 1px;
+}
+
+form {
+  display: flex;
+}
+
+form input {
+  padding: 7px;
+  width: 100%;
+  text-transform: capitalize;
+  border-radius: 5px 0 0 5px;
+}
+
+form button {
+  width: 80px;
+  cursor: pointer;
+  background-color: #f6c026;
+  border: none;
+  color: #0c4a60;
+  font-weight: bolder;
+  border: none;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+}
+
+form button:hover {
+  background-color: #abdff1;
+  color: black;
+}
+
+.words-container li {
+  user-select: none;
+  padding: 4px 12px;
+  font-size: 1.4rem;
+  background-color: #abdff1;
+  color: #354649;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.words-container li:hover {
+  background-color: #69c9e9;
+}
+
+/* width */
+.words-container::-webkit-scrollbar {
+  height: 8px;
+  scroll-behavior: smooth;
+}
+
+/* Track */
+.words-container::-webkit-scrollbar-track {
+  /* padding: 100px; */
+  background: #0c4a60;
+}
+
+/* Handle */
+.words-container::-webkit-scrollbar-thumb {
+  background-color: #abdff1;
+  width: 10px;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+.words-container::-webkit-scrollbar-thumb:hover {
+  background: #e1dddb;
+}
+
+/* Handle on active */
+.words-container::-webkit-scrollbar-thumb:active {
+  background-color: #e1dddb;
+}
+
+.edit-title {
+  margin-top: 2px;
+  padding: 5px 10px;
+  /* font-size: 1.45rem; */
+  width: 100%;
+  background-color: #e1dddb;
+  font-family: "Noto Sans Shavian", sans-serif;
+  color: black;
+  border-radius: 5px;
+}
+
+.lyrics-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  border-radius: 5px;
+  width: 100%;
+  padding: 6px 10px;
+  resize: none;
+  background-color: #e1dddb;
+  color: black;
+  outline: none;
+  font-family: "Noto Sans Shavian", sans-serif;
+  flex-grow: 2;
+  /* font-size: 1.45rem; */
+}
+
+@media screen and (min-width: 1024px) {
+  .edit-title,
+  textarea,
+  form input {
+    font-size: 1.55rem;
+  }
+}

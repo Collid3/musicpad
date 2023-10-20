@@ -29,11 +29,7 @@ const Song = () => {
   if (!song || song.title === "") return;
 
   return (
-    <>
-      <Header />
-      <Pad song={song} setSong={setSong} songs={songs} setSongs={setSongs} />
-      <Footer />
-    </>
+    <Pad song={song} setSong={setSong} songs={songs} setSongs={setSongs} />
   );
 };
 

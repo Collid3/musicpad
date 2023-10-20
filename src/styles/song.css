@@ -6,11 +6,12 @@
   overflow-x: auto;
   flex-wrap: nowrap;
   margin-bottom: 7px;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 form {
   display: flex;
+  margin-top: 8px;
 }
 
 form input {

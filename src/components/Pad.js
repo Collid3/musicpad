@@ -14,7 +14,7 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
 
   const searchRhymes = async (e) => {
     e.preventDefault();
-    if (wordRef.current.value === "") return;
+    if (e.target.value === "") return;
     setLoading(true);
 
     try {
@@ -54,17 +54,33 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
 
   return (
     <main>
-      <form>
+      <h3>
+        Title:{" "}
+        <span>
+          <input
+            ref={titleRef}
+            className="edit-title"
+            type="text"
+            placeholder="Word you want rhymes for..."
+            onSubmit={(e) => searchRhymes(e)}
+            value={song.title}
+            onChange={(e) =>
+              setSong((prev) => {
+                return { ...prev, title: e.target.value };
+              })
+            }
+          />
+        </span>
+      </h3>
+
+      <form onSubmit={(e) => searchRhymes(e)}>
         <input
           type="text"
           ref={wordRef}
           placeholder="Word you want rhymes for..."
-          onSubmit={(e) => searchRhymes(e)}
         />
 
-        <button onClick={searchRhymes} type="submit">
-          Search
-        </button>
+        <button type="submit">Search</button>
       </form>
 
       {words.length > 0 && (
@@ -97,25 +113,6 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
 
         {!loading && words.length === 0 && <p>Search a word to get rhymes</p>}
       </ul>
-
-      <h3>
-        Title:{" "}
-        <span>
-          <input
-            ref={titleRef}
-            className="edit-title"
-            type="text"
-            placeholder="Word you want rhymes for..."
-            onSubmit={(e) => searchRhymes(e)}
-            value={song.title}
-            onChange={(e) =>
-              setSong((prev) => {
-                return { ...prev, title: e.target.value };
-              })
-            }
-          />
-        </span>
-      </h3>
 
       <section className="lyrics-container">
         <h3>Lyrics</h3>

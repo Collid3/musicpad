@@ -20,7 +20,7 @@ const WordMeaning = () => {
       setWordInfo(response.data[0]);
     };
 
-    return () => fetchWordInfo();
+    fetchWordInfo();
   }, [word]);
 
   if (!wordInfo) return;

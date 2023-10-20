@@ -33,7 +33,10 @@ const WordMeaning = () => {
 
       <main className="word-definition-container">
         <i className="header">
-          Meaning Of: <span className="word-info-name">{wordInfo.word}</span>
+          Meaning Of:{" "}
+          <b>
+            <span className="word-info-name">{wordInfo.word}</span>
+          </b>
         </i>
 
         <ul>

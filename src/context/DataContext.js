@@ -9,7 +9,6 @@ export const DataProvider = ({ children }) => {
     if (localStorage.getItem("songs")) {
       const fetchedSongs = JSON.parse(localStorage.getItem("songs"));
 
-      console.log(fetchedSongs);
       setSongs(fetchedSongs);
     } else return setSongs([]);
   }, []);

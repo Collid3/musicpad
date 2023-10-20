@@ -3,32 +3,36 @@ import DataContext from "../context/DataContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HomeSongs from "../components/HomeSongs";
-import CreateSong from "../components/CreateSong";
+import { useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
 
 const Songs = () => {
   const { songs, setSongs } = useContext(DataContext);
   const [search, setSearch] = useState("");
-  const [createSong, setCreateSong] = useState(false);
+  const navigate = useNavigate("");
+
+  const createSong = () => {
+    const newSong = {
+      _id: v4(),
+      title: "New Title",
+      lyrics: "No Lyrics!",
+    };
+
+    localStorage.setItem("songs", JSON.stringify([...songs, newSong]));
+    setSongs((prev) => {
+      return [...prev, newSong];
+    });
+    navigate(`/${newSong._id}`);
+  };
 
   return (
     <>
       <header>
         <Header />
       </header>
-      {createSong ? (
-        <CreateSong
-          setCreateSong={setCreateSong}
-          songs={songs}
-          setSongs={setSongs}
-        />
-      ) : (
-        <button
-          className="create-song-button"
-          onClick={() => setCreateSong(true)}
-        >
-          Create A New Song
-        </button>
-      )}
+      <button className="create-song-button" onClick={createSong}>
+        Create A New Song
+      </button>
 
       {!createSong && (
         <input
@@ -51,7 +55,7 @@ const Songs = () => {
           )}
           search={search}
           setSongs={setSongs}
-          setCreateSong={setCreateSong}
+          createSong={createSong}
         />
       </main>
 

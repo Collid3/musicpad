@@ -1,5 +1,5 @@
 .create-song-button {
-  padding: 5px;
+  padding: 1rem;
   border: none;
   outline: none;
   background-color: #f6c026;
@@ -39,8 +39,8 @@
   width: 80px;
   cursor: pointer;
   background-color: #f6c026;
-  border: none;
   color: #0c4a60;
+  border: none;
   font-weight: bolder;
   border-radius: 0 5px 5px 0;
 }
@@ -98,4 +98,19 @@
 
 .home-songs-container li > div svg:hover {
   color: red;
+}
+
+@media screen and (max-width: 992px) {
+  .create-song-button:hover {
+    color: #0c4a60;
+  }
+
+  .create-song-container button:hover {
+    background-color: #f6c026;
+    color: #0c4a60;
+  }
+
+  .home-songs-container li:hover {
+    background-color: #196d8b;
+  }
 }

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
-const HomeSongs = ({ songs, search, setSongs, setCreateSong }) => {
+const HomeSongs = ({ songs, search, setSongs, createSong }) => {
   const navigate = useNavigate("");
 
   const handleDelete = async (songId) => {
@@ -14,7 +14,7 @@ const HomeSongs = ({ songs, search, setSongs, setCreateSong }) => {
       );
 
       setSongs((prev) => {
-        return prev.filter((song) => song._id === songId);
+        return prev.filter((song) => song._id !== songId);
       });
     } else return;
   };
@@ -51,7 +51,7 @@ const HomeSongs = ({ songs, search, setSongs, setCreateSong }) => {
       ) : search === "" ? (
         <p>
           No songs to display{" "}
-          <Link style={{ color: "orange" }} onClick={() => setCreateSong(true)}>
+          <Link style={{ color: "orange" }} onClick={() => createSong(true)}>
             Add Song
           </Link>
         </p>

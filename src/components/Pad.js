@@ -61,7 +61,7 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
             ref={titleRef}
             className="edit-title"
             type="text"
-            placeholder="Word you want rhymes for..."
+            placeholder="New Title..."
             onSubmit={(e) => searchRhymes(e)}
             value={song.title}
             onChange={(e) =>

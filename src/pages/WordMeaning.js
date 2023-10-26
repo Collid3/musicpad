@@ -23,8 +23,6 @@ const WordMeaning = () => {
     fetchWordInfo();
   }, [word]);
 
-  if (!wordInfo) return;
-
   return (
     <>
       <header>

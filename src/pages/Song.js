@@ -26,8 +26,6 @@ const Song = () => {
 
   if (!songId) return;
 
-  if (!song || song.title === "") return;
-
   return (
     <Pad song={song} setSong={setSong} songs={songs} setSongs={setSongs} />
   );

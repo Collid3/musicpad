@@ -2,11 +2,13 @@
   padding: 1rem;
   border: none;
   outline: none;
-  background-color: #f6c026;
-  color: #0c4a60;
+  color: white;
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #2d545e;
+  margin-bottom: 3px;
 }
 
 .create-song-container .create-song-cancel-button {
@@ -59,32 +61,40 @@
 
 .home-songs-container li {
   text-align: start;
-  background-color: #196d8b;
-  padding: 10px;
+  background-color: white;
+  color: black;
+  padding: 9px;
   border-radius: 10px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-songs-container li:hover {
-  background-color: #1c8fb9;
+  background-color: whitesmoke;
 }
 
 .home-songs-container li h3 {
   white-space: nowrap;
-  margin-bottom: 5px;
   text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+
+.home-songs-container li > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  align-items: center;
 }
 
 .home-songs-container li > p {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.home-songs-container li > div {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.4rem;
+  /* text-overflow: ellipsis; */
 }
 
 .home-songs-container li > div p span {
@@ -101,16 +111,8 @@
 }
 
 @media screen and (max-width: 992px) {
-  .create-song-button:hover {
-    color: #0c4a60;
-  }
-
   .create-song-container button:hover {
     background-color: #f6c026;
     color: #0c4a60;
-  }
-
-  .home-songs-container li:hover {
-    background-color: #196d8b;
   }
 }

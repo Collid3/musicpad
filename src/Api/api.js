@@ -7,3 +7,7 @@ export const wordsApi = axios.create({
 export const dictionaryApi = axios.create({
   baseURL: "https://api.dictionaryapi.dev/api/v2/entries/en/",
 });
+
+export const api = axios.create({
+  baseURL: "http://localhost:4000",
+});

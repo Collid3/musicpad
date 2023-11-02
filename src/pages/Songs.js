@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import DataContext from "../context/DataContext";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import HomeSongs from "../components/HomeSongs";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
@@ -14,8 +13,8 @@ const Songs = () => {
   const createSong = () => {
     const newSong = {
       _id: v4(),
-      title: "New Title",
-      lyrics: "No Lyrics!",
+      title: "New Song",
+      lyrics: "",
     };
 
     localStorage.setItem("songs", JSON.stringify([...songs, newSong]));
@@ -58,8 +57,6 @@ const Songs = () => {
           createSong={createSong}
         />
       </main>
-
-      <Footer />
     </>
   );
 };

@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Limbu&family=Noto+Sans+Shavian&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700;800;900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 * {
   padding: 0;
@@ -8,13 +9,18 @@
 
 html {
   font-size: 62.5%;
-  background-color: #0c4a60;
+  /* background-color: #dfa76b; */
+  background-image: radial-gradient(#f7c693, #dfa76b);
 }
 
 input,
 textarea,
 button {
   font-size: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 input {
@@ -31,19 +37,34 @@ ol {
   font-size: 1.6rem;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   min-height: 100vh;
-  gap: 7px;
-  padding: 1rem;
-  background-color: #0c4a60;
-  color: #f4f3ea;
-  font-family: "Noto Sans Shavian", sans-serif;
-  position: relative;
+  gap: 3rem;
+  /* background-color: #dfa76b; */
+  background-image: radial-gradient(#f7c693, #dfa76b);
+  color: white;
+  /* font-family: "Jost", sans-serif; */
+  font-family: "Space Grotesk", sans-serif;
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.App > section {
+  width: calc(62% - 34px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-right: 2rem;
+}
+
+.App > section.playing {
+  padding-bottom: 8rem;
 }
 
 h1 {
-  color: #f4f3ea;
+  color: white;
   text-transform: uppercase;
+  text-align: left;
 }
 
 h3 {
@@ -54,8 +75,7 @@ h3 {
 header {
   position: sticky;
   top: 0;
-  background-color: #0c4a60;
-  padding-top: 2px;
+  margin-bottom: 1.8rem;
 }
 
 footer {
@@ -70,11 +90,24 @@ main {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1.5rem;
+}
+
+main .back-button {
+  width: max-content;
+  background-color: rgb(236, 236, 236);
+  padding: 1px 2rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  margin-left: auto;
+  cursor: pointer;
+  margin-bottom: 6px;
 }
 
 @media screen and (min-width: 1200px) {
   .App {
-    width: 70%;
     margin: 0 auto;
     font-size: 1.6rem;
   }

@@ -1,0 +1,136 @@
+.sidebar-container {
+  width: 38%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 9.5rem;
+}
+
+.sidebar-container .add-music {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-container button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.3rem;
+  background-color: #2d545e;
+  color: white;
+  margin-top: 1.8rem;
+  margin-bottom: 1.3rem;
+}
+
+.sidebar-container button svg {
+  color: white;
+  font-size: 1.7rem;
+}
+
+.sidebar-container .add-song-input {
+  position: absolute;
+  left: -10000px;
+}
+
+.sidebar-container .songs-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-container .songs-container .song {
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-container .songs-container .song:hover {
+  background-color: whitesmoke;
+}
+
+.sidebar-container .songs-container .song.playing {
+  background-color: #d6b407;
+  color: white;
+}
+
+.sidebar-container .songs-container .song > p {
+  width: 100%;
+  padding: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-container .songs-container .song div {
+  display: flex;
+  align-items: center;
+  cursor: default;
+  width: 70px;
+}
+
+.sidebar-container .songs-container .song div section {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-container .songs-container .song div svg {
+  width: 100%;
+  font-size: 1.8rem;
+}
+
+.music-playing-icon {
+  pointer-events: none;
+}
+
+.sidebar-container .songs-container .song div svg:hover {
+  cursor: default;
+  color: steelblue;
+}
+
+.sidebar-container .songs-container .song div section ul {
+  position: absolute;
+  left: -10000px;
+  background-color: rgb(224, 224, 224);
+  color: white;
+  border-radius: 5px;
+  background-color: steelblue;
+  z-index: 2;
+}
+
+.sidebar-container .songs-container .song div section ul li {
+  padding: 3px 2rem;
+  user-select: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sidebar-container .songs-container .song div section ul li:hover {
+  background-color: #d6b407;
+  cursor: pointer;
+}
+
+.sidebar-container .songs-container .song div section ul li:last-child:hover {
+  background-color: rgb(214, 27, 27);
+}
+
+.sidebar-container .songs-container .song div section ul.menu-open {
+  left: -60px;
+  top: 23px;
+}

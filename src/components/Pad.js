@@ -2,8 +2,9 @@ import "../styles/song.css";
 import React, { useEffect, useRef, useState } from "react";
 import { wordsApi } from "../Api/api";
 import { useNavigate } from "react-router-dom";
+import { MdKeyboardBackspace } from "react-icons/md";
 
-const Pad = ({ song, setSong, songs, setSongs }) => {
+const Pad = ({ song, setSong, songs }) => {
   const [words, setWords] = useState([]);
   const wordRef = useRef("");
   const firstWordRef = useRef(null);
@@ -50,10 +51,15 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
         )
       )
     );
-  }, [song, songs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [song]);
 
   return (
     <main>
+      <p className="back-button" onClick={() => navigate("/")}>
+        <MdKeyboardBackspace />
+      </p>
+
       <h3>
         Title:{" "}
         <span>
@@ -73,7 +79,7 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
         </span>
       </h3>
 
-      <form onSubmit={(e) => searchRhymes(e)}>
+      <form className="song-form" onSubmit={(e) => searchRhymes(e)}>
         <input
           type="text"
           ref={wordRef}
@@ -115,11 +121,11 @@ const Pad = ({ song, setSong, songs, setSongs }) => {
       </ul>
 
       <section className="lyrics-container">
-        <h3>Lyrics</h3>
+        <h3>Lyrics:</h3>
 
         <textarea
           ref={lyricsRef}
-          placeholder="Write your lyrics..."
+          placeholder="Lyrics..."
           spellCheck={false}
           value={song.lyrics}
           onChange={(e) =>

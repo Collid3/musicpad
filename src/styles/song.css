@@ -9,30 +9,30 @@
   margin-top: 2px;
 }
 
-form {
+.song-form {
   display: flex;
   margin-top: 8px;
 }
 
-form input {
+.song-form input {
   padding: 7px;
   width: 100%;
   border-radius: 5px 0 0 5px;
 }
 
-form button {
+.song-form button {
   width: 80px;
   cursor: pointer;
-  background-color: #f6c026;
+  background-color: #d6b407;
   border: none;
-  color: #0c4a60;
+  color: whitesmoke;
   font-weight: bolder;
   border: none;
   outline: none;
   border-radius: 0 5px 5px 0;
 }
 
-form button:hover {
+.song-form button:hover {
   background-color: #abdff1;
   color: black;
 }
@@ -80,12 +80,17 @@ form button:hover {
   background-color: #e1dddb;
 }
 
+.edit-title,
+textarea,
+.song-form input {
+  font-size: 1.4rem;
+}
+
 .edit-title {
   margin-top: 2px;
   padding: 5px 10px;
-  /* font-size: 1.45rem; */
   width: 100%;
-  background-color: #e1dddb;
+  background-color: #eceae9;
   font-family: "Noto Sans Shavian", sans-serif;
   color: black;
   border-radius: 5px;
@@ -102,18 +107,19 @@ textarea {
   width: 100%;
   padding: 6px 10px;
   resize: none;
-  background-color: #e1dddb;
+  background-color: #eceae9;
   color: black;
   outline: none;
   font-family: "Noto Sans Shavian", sans-serif;
   flex-grow: 2;
-  /* font-size: 1.45rem; */
+  border: none;
+  outline: none;
 }
 
 @media screen and (min-width: 1024px) {
   .edit-title,
   textarea,
-  form input {
+  .song-form input {
     font-size: 1.55rem;
   }
 }

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { dictionaryApi } from "../Api/api";
 import WordInfo from "../components/WordInfo";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const WordMeaning = () => {
   const { word } = useParams();
@@ -48,8 +47,6 @@ const WordMeaning = () => {
           ))}
         </ul>
       </main>
-
-      <Footer />
     </>
   );
 };

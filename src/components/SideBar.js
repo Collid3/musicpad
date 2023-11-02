@@ -172,6 +172,7 @@ const SideBar = () => {
                   setLoadingMessage={setLoadingMessage}
                   setLoading={setLoading}
                   setMenu={setMenu}
+                  setNowPlaying={setNowPlaying}
                 />
               </section>
             </div>

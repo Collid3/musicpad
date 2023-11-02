@@ -12,6 +12,7 @@ export const DataProvider = ({ children }) => {
   const [beats, setBeats] = useState([]);
   const [nowPlaying, setNowPlaying] = useState(null);
   const [globalLoading, setGlobalLoading] = useState(true);
+  const [globalError, setGlobalError] = useState(null);
   const navigate = useNavigate("");
 
   useEffect(() => {
@@ -33,7 +34,12 @@ export const DataProvider = ({ children }) => {
         setGlobalLoading(false);
         return setMe(response.data.user);
       } catch (err) {
-        console.log(err.data.error);
+        if (err.message === "Network Error") {
+          setGlobalLoading(false);
+          return setGlobalError(
+            "Network error. Check your internet connection and try again"
+          );
+        }
         return setGlobalLoading(false);
       }
     });
@@ -52,6 +58,7 @@ export const DataProvider = ({ children }) => {
         setBeats,
         nowPlaying,
         setNowPlaying,
+        globalError,
         globalLoading,
       }}
     >

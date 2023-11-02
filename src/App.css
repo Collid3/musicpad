@@ -10,7 +10,7 @@
 html {
   font-size: 62.5%;
   /* background-color: #dfa76b; */
-  background-image: radial-gradient(#f7c693, #dfa76b);
+  background-image: radial-gradient(#e9b379, #dfa76b);
 }
 
 input,
@@ -41,7 +41,7 @@ ol {
   min-height: 100vh;
   gap: 3rem;
   /* background-color: #dfa76b; */
-  background-image: radial-gradient(#f7c693, #dfa76b);
+  background-image: radial-gradient(#e9b379, #dfa76b);
   color: white;
   /* font-family: "Jost", sans-serif; */
   font-family: "Space Grotesk", sans-serif;

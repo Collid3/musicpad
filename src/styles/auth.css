@@ -9,6 +9,7 @@
 .auth-container h1 {
   margin-bottom: 20px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .auth-form {
@@ -28,6 +29,8 @@
 .auth-form input,
 .auth-form button {
   padding: 10px;
+  outline: none;
+  border: none;
 }
 
 .auth-form input:focus {
@@ -62,5 +65,5 @@
 }
 
 .auth-form a {
-  color: orange;
+  color: #0c4a60;
 }

@@ -9,6 +9,8 @@ import DataContext from "../context/DataContext";
 import { IoMdAdd } from "react-icons/io";
 import { api } from "../Api/api";
 import SidebarMenu from "./SidebarMenu";
+import { signOut } from "firebase/auth";
+import { auth } from "../config/firebaseConfig";
 
 const SideBar = () => {
   const { me, nowPlaying, setNowPlaying, beats, setBeats } =
@@ -52,7 +54,17 @@ const SideBar = () => {
 
   return (
     <div className="sidebar-container">
-      <h2>MUSICPAD</h2>
+      <h2>
+        MUSICPAD{" "}
+        <span
+          className="logout-button"
+          onClick={async () => {
+            return await signOut(auth);
+          }}
+        >
+          Logout
+        </span>
+      </h2>
 
       {!loading && !responseMessage && (
         <button onClick={() => inputRef.current.click()}>

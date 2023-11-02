@@ -11,12 +11,30 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 
 function App() {
-  const { me, nowPlaying, globalLoading } = useContext(DataContext);
+  const { me, nowPlaying, globalLoading, globalError } =
+    useContext(DataContext);
 
   if (globalLoading) {
     return (
       <h1 style={{ height: "100vh", display: "grid", placeContent: "center" }}>
         Loading...
+      </h1>
+    );
+  }
+
+  if (globalError) {
+    return (
+      <h1
+        style={{
+          height: "100vh",
+          display: "grid",
+          placeContent: "center",
+          width: "min(500px, 80%)",
+          margin: "auto",
+          textAlign: "center",
+        }}
+      >
+        {globalError}
       </h1>
     );
   }

@@ -12,6 +12,20 @@
 .sidebar-container .add-music {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-container > h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-container .logout-button {
+  padding: 5px 1.5rem;
+  background-color: rgb(221, 29, 29);
+  border-radius: 5px;
+  font-size: 1.45rem;
+  cursor: pointer;
 }
 
 .sidebar-container button {

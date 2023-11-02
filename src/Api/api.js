@@ -9,5 +9,5 @@ export const dictionaryApi = axios.create({
 });
 
 export const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://musicpad-server.onrender.com",
 });

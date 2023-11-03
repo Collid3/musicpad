@@ -10,6 +10,7 @@ const SidebarMenu = ({
   setLoadingMessage,
   setLoading,
   setNowPlaying,
+  nowPlaying,
 }) => {
   const handleDelete = async () => {
     setLoading(true);
@@ -23,16 +24,17 @@ const SidebarMenu = ({
 
       setTimeout(() => {
         setResponseMessage(null);
-      }, 3000);
+      }, 2000);
 
       setBeats((prev) => {
         return prev.filter((Beat) => Beat._id !== beat._id);
       });
 
-      if (setNowPlaying._id === beat._id) {
+      if (nowPlaying._id === beat._id) {
         setNowPlaying(null);
       }
       setLoading(false);
+      console.log("done");
       return setLoadingMessage(null);
     } catch (err) {
       console.log(err.message);

@@ -7,10 +7,7 @@ const Audio = () => {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    if (!nowPlaying) {
-      audioRef.current.pause();
-      return (audioRef.current.currentTime = 0);
-    }
+    if (!nowPlaying) return;
 
     audioRef.current.currentTime = 0;
     audioRef.current.play();

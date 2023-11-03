@@ -94,7 +94,7 @@
 .home-songs-container li > p {
   white-space: nowrap;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 
 .home-songs-container li > div p span {
